@@ -1,0 +1,36 @@
+ID;Title;Preconditions;Steps;Expected Result;Priority
+TC-01;Successful transfer with valid data;User is logged in. Source account has sufficient balance. Beneficiary exists.;"1. Open Send Money page.
+2. Select source account BG1234.
+3. Select beneficiary Ivan Petrov.
+4. Enter amount 100.00.
+5. Select matching currency BGN.
+6. Enter reference 'Rent payment'.
+7. Submit.";Transfer is completed successfully. Source account is debited by 100.00 and confirmation screen displays a transaction reference.;High
+TC-02;Transfer without reference;User is logged in. Source account has sufficient balance. Beneficiary exists.;"1. Select source account BG1234 and beneficiary Ivan Petrov.
+2. Enter amount 25.50.
+3. Leave reference field empty.
+4. Submit.";Transfer is successful. Empty reference is accepted. Confirmation screen is displayed.;High
+TC-03;Amount equal to zero;User is logged in. Beneficiary exists.;"1. Select source account BG1234 and beneficiary Ivan Petrov.
+2. Enter amount 0.00.
+3. Submit.";Validation message is displayed. Transfer is not submitted. No funds are deducted.;High
+TC-04;Negative amount;User is logged in. Beneficiary exists.;"1. Select source account BG1234 and beneficiary Ivan Petrov.
+2. Enter amount -10.00.
+3. Submit.";User cannot proceed. Validation error indicates that amount must be positive.;High
+TC-05;Amount with more than two decimal places;User is logged in. Beneficiary exists.;"1. Select source account BG1234 and beneficiary Ivan Petrov.
+2. Enter amount 10.999.
+3. Submit.";Validation error is displayed because only two decimal places are allowed.;High
+TC-06;Currency does not match source account;User has a EUR account. Beneficiary exists.;"1. Select EUR account.
+2. Try to select a different currency (USD) if possible.
+3. Submit transfer.";System prevents currency mismatch either by locking the field or by showing a validation error. Transfer is not processed.;High
+TC-07;Reference at maximum allowed length;User is logged in. Source account has sufficient balance. Beneficiary exists.;"1. Enter valid transfer details.
+2. Enter a reference: 'RentForApartment1234567890123456789' (exactly 35 characters).
+3. Submit.";Transfer is completed successfully. Reference is accepted and preserved.;Medium
+TC-08;Reference exceeds maximum length;User is logged in. Beneficiary exists.;"1. Enter valid transfer details.
+2. Enter a reference: 'RentForApartment12345678901234567890' (36 characters).
+3. Submit.";User is prevented from entering more than 35 characters or receives a validation error when submitting.;Medium
+TC-09;Reference contains special characters;User is logged in. Beneficiary exists.;"1. Enter valid transfer details.
+2. Enter reference 'Invoice #123!'.
+3. Submit.";Validation error is displayed because only letters, digits and spaces are allowed. Transfer is not submitted.;Medium
+TC-10;Boundary case for minimum valid amount;User is logged in. Source account has sufficient balance. Beneficiary exists.;"1. Select source account BG1234 and beneficiary Ivan Petrov.
+2. Enter amount 0.01.
+3. Submit.";Transfer is completed successfully. Minimum valid amount is processed.;High

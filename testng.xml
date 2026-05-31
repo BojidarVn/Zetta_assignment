@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Zetta QA Task Suite" parallel="false">
+
+    <test name="UI Tests">
+        <classes>
+            <class name="com.bojidar.zetta.ui.CheckoutFlowTest"/>
+        </classes>
+    </test>
+
+    <test name="API Tests">
+        <classes>
+            <class name="com.bojidar.zetta.api.PostsApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Link Checker Tests">
+        <classes>
+            <class name="com.bojidar.zetta.linkchecker.LinkCheckerTest"/>
+        </classes>
+    </test>
+
+</suite>

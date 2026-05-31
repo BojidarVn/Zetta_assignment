@@ -1,0 +1,15 @@
+Field;Details
+Bug ID;BUG-01
+Title;Transfer is processed when reference contains special characters
+Severity;Medium
+Environment;QA Environment, Chrome 137, Windows 11
+Description;The optional reference field allows special symbols to bypass validation. Currently, when special characters are entered, the front-end validation does not block the submission and the transfer is processed successfully by the system.
+Steps to Reproduce;"1. Login with a valid user.
+2. Open 'Send Money to a Beneficiary'.
+3. Select source account and beneficiary.
+4. Enter amount 25.00.
+5. Enter reference 'Invoice #123!'.
+6. Submit the transfer."
+Expected Result;Reference field should accept only letters, digits and spaces. Validation message should be displayed and transfer should not be processed.
+Actual Result;Transfer is completed successfully and confirmation screen is displayed.
+Additional Information;Issue is reproducible every time. Also verified with other special characters such as @, % and &. The transfer is still processed successfully.
