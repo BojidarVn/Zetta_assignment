@@ -55,9 +55,4 @@ public abstract class BasePage {
     protected void waitForUrlContains(String value) {
         wait.until(ExpectedConditions.urlContains(value));
     }
-
-    protected <T> T waitUntil(ExpectedCondition<T> condition) {
-
-        return wait.until(condition);
-    }
 }
