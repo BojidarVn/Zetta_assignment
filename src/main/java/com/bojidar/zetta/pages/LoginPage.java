@@ -19,22 +19,27 @@ public class LoginPage extends BasePage {
     }
 
     public String getCurrentUrl() {
+
         return driver.getCurrentUrl();
     }
 
     public String getPageTitle() {
+
         return driver.getTitle();
     }
 
     public boolean isUsernameFieldDisplayed() {
+
         return isVisible(usernameInput);
     }
 
     public boolean isPasswordFieldDisplayed() {
+
         return isVisible(passwordInput);
     }
 
     public boolean isLoginButtonDisplayed() {
+
         return isVisible(loginButton);
     }
 

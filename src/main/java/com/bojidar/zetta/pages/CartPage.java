@@ -44,10 +44,12 @@ public class CartPage extends BasePage {
 
     public CheckoutPage proceedToCheckout() {
         click(checkoutButton);
+
         return new CheckoutPage(driver);
     }
 
     private BigDecimal parsePrice(String priceText) {
+
         return new BigDecimal(priceText.replace("$", "").trim());
     }
 }

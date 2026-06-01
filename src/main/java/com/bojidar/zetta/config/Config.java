@@ -6,18 +6,22 @@ public final class Config {
     }
 
     public static String sauceDemoUrl() {
+
         return get("SAUCE_DEMO_URL", "https://www.saucedemo.com/");
     }
 
     public static String jsonPlaceholderUrl() {
+
         return get("JSON_PLACEHOLDER_URL", "https://jsonplaceholder.typicode.com");
     }
 
     public static String internetPageUrl() {
+
         return get("INTERNET_PAGE_URL", "https://the-internet.herokuapp.com/");
     }
 
     public static boolean isHeadless() {
+
         return Boolean.parseBoolean(get("HEADLESS", "true"));
     }
 
